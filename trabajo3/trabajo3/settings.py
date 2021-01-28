@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pelicula.apps.PeliculaConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'trabajo3.wsgi.application'
 
