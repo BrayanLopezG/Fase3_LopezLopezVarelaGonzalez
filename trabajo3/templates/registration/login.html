@@ -1,49 +1,60 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<div class="container-fluid">
-    <div style="text-align: center;">
-        <h1 style="font-size: 70px; color: bisque;">Ingresar Credenciales</h1>
-        <br>
-        <br>
-        {% if form.errors %}
-        <p style="font-size: 30px; color: rgb(255, 0, 0);">
-            Tu Usuario o Contraseña son incorrecta. Porfavor intentar denuevo
-        </p>
-        {% endif %}
-
-        {% if next %}
-        {% if user.is_authenticated %}
-        <p>
-            Tu cuenta no tiene acceso a esta seccion. porfavor ingresar con una cuenta con acceso.
-        </p>
-        {% else %}
-        <p>
-            Porfavor Ingresar Credenciales en esta pagina.
-        </p>
-        {% endif %}
-        {% endif %}
-
-        <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            <div style="font-size: 20px; color: honeydew;">
-                <td>{{ form.username.label_tag }}</td>
-                <td>{{ form.username }}</td>
+<body>
+    <div class="container-fluid" style="background-color: aliceblue;">
+    <div class="masthead container d-flex align-items-center flex-column" >
+        <div class="login-page" style="text-align: center;">
+            <div class="form">
+                <br>
+                <br>
+                <h1>Ingresar Credenciales</h1>
+                <br>
+                <br>
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div>
+                        {% if form.errors %}
+                        <p style="color: red; font-size: 10px;">Usuario y/o contraseña incorrecto. Inténtalo de nuevo.
+                        </p>
+                        {% endif %}
+                        <td> <label class="label"> Usuario: </label> </td>
+                        <p></p>
+                        <td>{{ form.username }}</td>
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+                        <td> <label class="label"> Contraseña: </label> </td>
+                        <p></p>
+                        <td>{{ form.password }}</td>
+                    </div>
+                    <div>
+                        <br>
+                        <br>
+                        <button class="btn btn-primary btn-xl" type="submit" value="login"> Ingresar </button>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </form>
             </div>
-            <br>
-            <div style="font-size: 20px; color: honeydew;">
-                <td>{{ form.password.label_tag}}</td>
-                <td>{{ form.password }}</td>
-            </div>
-            <br>
-            <br>
-            <div>
-                <input type="submit" value="login" />
-                <input type="hidden" name="next" value="{{ next }}">
-            </div>
-        </form>
-        <br>
-        <br>
-
+        </div>
     </div>
 </div>
+</body>
 {% endblock %}

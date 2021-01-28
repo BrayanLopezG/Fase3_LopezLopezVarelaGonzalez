@@ -25,6 +25,7 @@ def contacto(request):
         'contacto.html',
     )
 
+## clases para las peliculas
 
 class PeliculaCreate(CreateView):
     model = Pelicula
@@ -43,6 +44,8 @@ class PeliculaDetailView(generic.DetailView):
 
 class PeliculaListView(ListView):
     model = Pelicula
+
+## clases para los autores
 
 class AuthorCreate(CreateView):
     model = Author
