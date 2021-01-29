@@ -38,3 +38,6 @@ http://127.0.0.1:8000/pelicula/author/delete/<int:pk>/
 para ingresar al Login
 
 http://127.0.0.1:8000/accounts/login/
+
+instalar en cmd
+pip install djangorestframework
